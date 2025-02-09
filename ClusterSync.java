@@ -17,7 +17,7 @@ public class ClusterSync implements Runnable {
     @Override
     public void run() {
         while (true){
-            synchronized (token){
+            synchronized (token){ // serve para garantir que apenas um nó acessa o token por vez
                 // verifica se é a vez deste nó processar o token
                 if (token.getCurrentPosition() == id){
                     // verifica se há uma solicitação pendente
