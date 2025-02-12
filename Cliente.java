@@ -14,7 +14,7 @@ public class Cliente implements Runnable {
     public void run() {
         for (int i = 0; i < numRequests; i++) {
             String request = "Cliente " + id + "\n Timestamp " + System.currentTimeMillis() + "\n";  // gera um timestamp
-            System.out.println("Cliente " + id + " solicita acesso ao recurso R: " + request);
+            System.out.println("Cliente " + id + " solicita acesso ao recurso R: " + request); // request seria tipo o cliente que fez a solicitação
 
             synchronized (clusterSync) {
                 clusterSync.setPendingRequest(request);
